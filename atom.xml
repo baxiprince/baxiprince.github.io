@@ -1,0 +1,543 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>编程记</title>
+  
+  <subtitle>编程生活</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="https://vbee.club/"/>
+  <updated>2020-03-12T02:26:03.000Z</updated>
+  <id>https://vbee.club/</id>
+  
+  <author>
+    <name>区区小生</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>B4A 检测是否使用 VPN</title>
+    <link href="https://vbee.club/2020/03/12/B4A_CHEAK_TF_VPN/"/>
+    <id>https://vbee.club/2020/03/12/B4A_CHEAK_TF_VPN/</id>
+    <published>2020-03-12T02:26:03.000Z</published>
+    <updated>2020-03-12T02:26:03.000Z</updated>
+    
+    <content type="html"><![CDATA[<h4 id="提权"><a href="#提权" class="headerlink" title="提权"></a>提权</h4><figure class="highlight vb"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">AddPermission(android.permission.ACCESS_NETWORK_STATE)</span><br></pre></td></tr></table></figure><h4 id="源码"><a href="#源码" class="headerlink" title="源码"></a>源码</h4><figure class="highlight vb"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">Sub</span> tf_vpn() <span class="keyword">As</span> <span class="built_in">Boolean</span></span><br><span class="line"><span class="keyword">Try</span></span><br><span class="line"><span class="keyword">Dim</span> p <span class="keyword">As</span> Phone,tf <span class="keyword">As</span> <span class="built_in">Boolean</span>=<span class="literal">False</span></span><br><span class="line"><span class="keyword">If</span> p.SdkVersion &gt;= <span class="number">21</span> <span class="keyword">Then</span></span><br><span class="line"><span class="keyword">Dim</span> jobj <span class="keyword">As</span> JavaObject</span><br><span class="line">jobj.InitializeContext</span><br><span class="line"><span class="keyword">Dim</span> manager <span class="keyword">As</span> JavaObject = jobj.RunMethod(<span class="string">"getSystemService"</span>, Array(<span class="string">"connectivity"</span>))</span><br><span class="line"><span class="keyword">Dim</span> networks() <span class="keyword">As</span> <span class="built_in">Object</span> = manager.RunMethod(<span class="string">"getAllNetworks"</span>, Null)</span><br><span class="line"><span class="keyword">For</span> <span class="keyword">Each</span> network <span class="keyword">As</span> JavaObject <span class="keyword">In</span> networks</span><br><span class="line"><span class="keyword">Dim</span> capabilities <span class="keyword">As</span> JavaObject = manager.RunMethod(<span class="string">"getNetworkCapabilities"</span>, Array(network))</span><br><span class="line"><span class="keyword">Dim</span> IsVPN <span class="keyword">As</span> <span class="built_in">Boolean</span> = capabilities.RunMethod(<span class="string">"hasTransport"</span>, Array(<span class="number">4</span>)) <span class="comment">'TRANSPORT_VPN</span></span><br><span class="line"><span class="keyword">If</span> IsVPN <span class="keyword">Then</span> tf= <span class="literal">True</span></span><br><span class="line"><span class="keyword">Next</span></span><br><span class="line"><span class="keyword">If</span> tf <span class="keyword">Then</span></span><br><span class="line"><span class="keyword">Return</span> <span class="literal">True</span></span><br><span class="line"><span class="keyword">Else</span></span><br><span class="line"><span class="keyword">Return</span> <span class="literal">False</span></span><br><span class="line"><span class="keyword">End</span> <span class="keyword">If</span></span><br><span class="line"><span class="keyword">Else</span></span><br><span class="line"><span class="keyword">Return</span> <span class="literal">False</span></span><br><span class="line"><span class="keyword">End</span> <span class="keyword">If</span></span><br><span class="line"><span class="keyword">Catch</span></span><br><span class="line"><span class="keyword">Return</span> <span class="literal">False</span></span><br><span class="line"><span class="keyword">End</span> <span class="keyword">Try</span></span><br><span class="line"><span class="keyword">End</span> <span class="keyword">Sub</span></span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h4 id=&quot;提权&quot;&gt;&lt;a href=&quot;#提权&quot; class=&quot;headerlink&quot; title=&quot;提权&quot;&gt;&lt;/a&gt;提权&lt;/h4&gt;&lt;figure class=&quot;highlight vb&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span cla
+      
+    
+    </summary>
+    
+    
+      <category term="B4A" scheme="https://vbee.club/categories/B4A/"/>
+    
+    
+      <category term="B4A" scheme="https://vbee.club/tags/B4A/"/>
+    
+      <category term="VPN" scheme="https://vbee.club/tags/VPN/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>B4A 关闭严格模式</title>
+    <link href="https://vbee.club/2020/03/12/B4A_close_ygms/"/>
+    <id>https://vbee.club/2020/03/12/B4A_close_ygms/</id>
+    <published>2020-03-12T02:26:03.000Z</published>
+    <updated>2020-03-12T02:26:03.000Z</updated>
+    
+    <content type="html"><![CDATA[<figure class="highlight vb"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">Sub</span> DisableStrictMode</span><br><span class="line">  <span class="comment">'关闭严格模式</span></span><br><span class="line">  <span class="keyword">Dim</span> jo <span class="keyword">As</span> JavaObject</span><br><span class="line">  jo.InitializeStatic(<span class="string">"android.os.Build.VERSION"</span>)</span><br><span class="line">  <span class="keyword">If</span> jo.GetField(<span class="string">"SDK_INT"</span>) &gt; <span class="number">9</span> <span class="keyword">Then</span></span><br><span class="line">    <span class="keyword">Dim</span> policy <span class="keyword">As</span> JavaObject</span><br><span class="line">    policy = policy.InitializeNewInstance(<span class="string">"android.os.StrictMode.ThreadPolicy.Builder"</span>, Null)</span><br><span class="line">    policy = policy.RunMethodJO(<span class="string">"permitAll"</span>, Null).RunMethodJO(<span class="string">"build"</span>, Null)</span><br><span class="line">    <span class="keyword">Dim</span> sm <span class="keyword">As</span> JavaObject</span><br><span class="line">    sm.InitializeStatic(<span class="string">"android.os.StrictMode"</span>).RunMethod(<span class="string">"setThreadPolicy"</span>, Array(policy))</span><br><span class="line">  <span class="keyword">End</span> <span class="keyword">If</span></span><br><span class="line"><span class="keyword">End</span> <span class="keyword">Sub</span></span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;figure class=&quot;highlight vb&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;l
+      
+    
+    </summary>
+    
+    
+      <category term="B4A" scheme="https://vbee.club/categories/B4A/"/>
+    
+    
+      <category term="B4A" scheme="https://vbee.club/tags/B4A/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>B4A 粘贴板使用方法</title>
+    <link href="https://vbee.club/2020/03/12/B4A_clp_use_eg/"/>
+    <id>https://vbee.club/2020/03/12/B4A_clp_use_eg/</id>
+    <published>2020-03-12T02:26:03.000Z</published>
+    <updated>2020-03-12T02:26:03.000Z</updated>
+    
+    <content type="html"><![CDATA[<figure class="highlight vbnet"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">Dim</span> clb <span class="keyword">As</span> BClipboard,dystr <span class="keyword">As</span> <span class="built_in">String</span></span><br><span class="line"><span class="comment">''必须先检测has否则程序崩溃</span></span><br><span class="line"><span class="keyword">If</span> clb.HasText <span class="keyword">Then</span></span><br><span class="line">dystr = clb.getText</span><br><span class="line"><span class="keyword">End</span> <span class="keyword">If</span></span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;figure class=&quot;highlight vbnet&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class
+      
+    
+    </summary>
+    
+    
+      <category term="B4A" scheme="https://vbee.club/categories/B4A/"/>
+    
+    
+      <category term="B4A" scheme="https://vbee.club/tags/B4A/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CMD 获取本地wifi密码</title>
+    <link href="https://vbee.club/2020/03/12/CMD_GET_WIFI_PASS/"/>
+    <id>https://vbee.club/2020/03/12/CMD_GET_WIFI_PASS/</id>
+    <published>2020-03-12T02:26:03.000Z</published>
+    <updated>2020-03-12T02:26:03.000Z</updated>
+    
+    <content type="html"><![CDATA[<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">获取wifi网络列表: netsh.exe wlan show profile</span><br><span class="line">获取指定wifi名的信息包括密码: netsh.exe wlan show profile wifi名称 key=clear</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;figure class=&quot;highlight cmd&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;
+      
+    
+    </summary>
+    
+    
+      <category term="CMD" scheme="https://vbee.club/categories/CMD/"/>
+    
+    
+      <category term="wifi" scheme="https://vbee.club/tags/wifi/"/>
+    
+      <category term="CMD" scheme="https://vbee.club/tags/CMD/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>php url分片下载大文件</title>
+    <link href="https://vbee.club/2020/03/12/php_curl_fd_download/"/>
+    <id>https://vbee.club/2020/03/12/php_curl_fd_download/</id>
+    <published>2020-03-12T02:26:03.000Z</published>
+    <updated>2020-03-12T02:26:03.000Z</updated>
+    
+    <content type="html"><![CDATA[<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br></pre></td><td class="code"><pre><span class="line">url分片下载大文件</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//get请求获取body体</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">curl_get_with_body</span><span class="params">($url, $range)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    $curl = curl_init();</span><br><span class="line"></span><br><span class="line">    curl_setopt_array($curl, <span class="keyword">array</span>(</span><br><span class="line">        CURLOPT_URL =&gt; $url,</span><br><span class="line">        CURLOPT_RETURNTRANSFER =&gt; <span class="keyword">true</span>,</span><br><span class="line">        CURLOPT_ENCODING =&gt; <span class="string">""</span>,</span><br><span class="line">        CURLOPT_MAXREDIRS =&gt; <span class="number">10</span>,</span><br><span class="line">        CURLOPT_TIMEOUT =&gt; <span class="number">30</span>,</span><br><span class="line">        CURLOPT_HTTP_VERSION =&gt; CURL_HTTP_VERSION_1_1,</span><br><span class="line">        CURLOPT_CUSTOMREQUEST =&gt; <span class="string">"GET"</span>,</span><br><span class="line">        CURLOPT_POSTFIELDS =&gt; <span class="string">""</span>,</span><br><span class="line">        CURLOPT_SSL_VERIFYPEER =&gt; <span class="keyword">false</span>,</span><br><span class="line">        CURLOPT_SSL_VERIFYHOST =&gt; <span class="number">2</span>,</span><br><span class="line">        CURLOPT_HTTPHEADER =&gt; <span class="keyword">array</span>(</span><br><span class="line">            <span class="string">"Range: bytes=&#123;$range&#125;"</span></span><br><span class="line">        ),</span><br><span class="line">    ));</span><br><span class="line"></span><br><span class="line">    $response = curl_exec($curl);</span><br><span class="line">    $err = curl_error($curl);</span><br><span class="line">    curl_close($curl);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> ($err) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"cURL Error #:"</span> . $err;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> $response;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//get请求</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">curl_get_with_head</span><span class="params">($url, $header)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    $curl = curl_init();</span><br><span class="line"></span><br><span class="line">    curl_setopt_array($curl, <span class="keyword">array</span>(</span><br><span class="line">        CURLOPT_URL =&gt; $url,</span><br><span class="line">        CURLOPT_RETURNTRANSFER =&gt; <span class="keyword">true</span>,</span><br><span class="line">        CURLOPT_ENCODING =&gt; <span class="string">""</span>,</span><br><span class="line">        CURLOPT_MAXREDIRS =&gt; <span class="number">10</span>,</span><br><span class="line">        CURLOPT_TIMEOUT =&gt; <span class="number">30</span>,</span><br><span class="line">        CURLOPT_HTTP_VERSION =&gt; CURL_HTTP_VERSION_1_1,</span><br><span class="line">        CURLOPT_CUSTOMREQUEST =&gt; <span class="string">"HEAD"</span>,</span><br><span class="line">        CURLOPT_POSTFIELDS =&gt; <span class="string">""</span>,</span><br><span class="line">        CURLOPT_SSL_VERIFYPEER =&gt; <span class="keyword">false</span>,</span><br><span class="line">        CURLOPT_SSL_VERIFYHOST =&gt; <span class="number">2</span>,</span><br><span class="line">        <span class="comment">//CURLINFO_HEADER_OUT =&gt; TRUE,    //获取请求头</span></span><br><span class="line">        CURLOPT_HEADER =&gt; <span class="keyword">true</span>, <span class="comment">//获取响应头</span></span><br><span class="line">        CURLOPT_NOBODY =&gt; <span class="keyword">true</span>, <span class="comment">//不需要响应正文</span></span><br><span class="line">        CURLOPT_HTTPHEADER =&gt; $header,</span><br><span class="line">    ));</span><br><span class="line"></span><br><span class="line">    $response = curl_exec($curl);</span><br><span class="line">    $err = curl_error($curl);</span><br><span class="line">    curl_close($curl);</span><br><span class="line">    $responseHeader = explode(<span class="string">"\r\n"</span>, $response);</span><br><span class="line">    $totalLength = $eTag = <span class="string">''</span>;</span><br><span class="line">    <span class="keyword">foreach</span>($responseHeader <span class="keyword">as</span> $response) &#123;</span><br><span class="line">        <span class="keyword">if</span>($response)&#123;</span><br><span class="line">            <span class="comment">//获取文件总长度</span></span><br><span class="line">            <span class="keyword">if</span>(strpos($response, <span class="string">'Content-Range:'</span>, <span class="number">0</span>) !== <span class="keyword">false</span>) &#123;</span><br><span class="line">                $totalLength = explode(<span class="string">':'</span>, $response);</span><br><span class="line">                $totalLength = array_pop($totalLength);</span><br><span class="line">                $totalLength = explode(<span class="string">'/'</span>, $totalLength);</span><br><span class="line">                $totalLength = array_pop($totalLength);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">//获取文件etag</span></span><br><span class="line">            <span class="keyword">if</span>(strpos($response, <span class="string">'ETag:'</span>, <span class="number">0</span>) !== <span class="keyword">false</span>) &#123;</span><br><span class="line">                $eTag = explode(<span class="string">':'</span>, $response);</span><br><span class="line">                $eTag = array_pop($eTag);</span><br><span class="line">                $eTag = trim(str_replace(<span class="string">'"'</span>, <span class="string">''</span>, $eTag));</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> ($err) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"cURL Error #:"</span> . $err;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> [<span class="string">'length'</span> =&gt; $totalLength, <span class="string">'etag'</span> =&gt; $eTag];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">download_file</span><span class="params">($file_url,$file_path,$rname,$ext)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"><span class="comment">//    $file = "http://public.geek-in.net/clouddisk/NYsrTpPRjz.mp4";</span></span><br><span class="line">    $range = <span class="string">"0-1"</span>;</span><br><span class="line">    $response = curl_get_with_head($file_url, <span class="keyword">array</span>(</span><br><span class="line">        <span class="string">"Range: bytes=&#123;$range&#125;"</span></span><br><span class="line">    ));</span><br><span class="line">    $eTag = $response[<span class="string">'etag'</span>];</span><br><span class="line">    $length = $response[<span class="string">'length'</span>];</span><br><span class="line">    <span class="keyword">if</span>(file_exists($file_path.$rname.<span class="string">'.'</span>.$ext)) &#123;</span><br><span class="line">        <span class="keyword">if</span> (filesize($file_path . $rname . <span class="string">'.'</span> . $ext) != $length) &#123;<span class="comment">//大小不一样重新下载</span></span><br><span class="line">            <span class="keyword">try</span> &#123;</span><br><span class="line">                unlink($file_path . $rname . <span class="string">'.'</span> . $ext);</span><br><span class="line">            &#125;<span class="keyword">catch</span> (<span class="keyword">Exception</span> $exception)&#123;</span><br><span class="line">                <span class="keyword">echo</span> <span class="string">"删除文件失败：&#123;$file_path&#125;&#123;$rname&#125;.&#123;$ext&#125;"</span> . PHP_EOL;</span><br><span class="line">            &#125;</span><br><span class="line">            $chunkCount = <span class="number">100</span>;</span><br><span class="line">            $chunkCount = $length/<span class="number">10000000</span>;</span><br><span class="line">            $step = ceil($length / $chunkCount);</span><br><span class="line">            <span class="keyword">echo</span> <span class="number">11111</span>;</span><br><span class="line">            $fp=fopen(<span class="string">"&#123;$file_path&#125;&#123;$rname&#125;.&#123;$ext&#125;"</span>, <span class="string">'w+'</span>);</span><br><span class="line">            <span class="keyword">for</span>($i=<span class="number">0</span>;$i&lt;$chunkCount;$i++) &#123;</span><br><span class="line">                $start = $i * $step;</span><br><span class="line">                $end = (($i+<span class="number">1</span>) * $step) <span class="number">-1</span>;</span><br><span class="line">                <span class="keyword">if</span>($end &gt; $length) &#123;</span><br><span class="line">                    $end = $length;</span><br><span class="line">                &#125;</span><br><span class="line">                $range = $start. <span class="string">'-'</span>. $end;</span><br><span class="line">                $con = curl_get_with_body($file_url, $range);</span><br><span class="line"><span class="comment">//        file_put_contents("&#123;$file_path&#125;&#123;$rname&#125;.&#123;$ext&#125;", $con, FILE_APPEND);</span></span><br><span class="line"></span><br><span class="line">                fwrite($fp, $con);</span><br><span class="line">                <span class="keyword">echo</span>(<span class="string">"总大小&#123;$length&#125;,共计&#123;$chunkCount&#125;片，第&#123;$i&#125;片下载完成, range:"</span>. $range .PHP_EOL);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">echo</span> <span class="string">"下载完成，总大小：&#123;$length&#125;,"</span>;</span><br><span class="line">            fclose($fp);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">download_file(<span class="string">"http://www.www.ss.mp4"</span>,<span class="string">"D:\","</span>cc<span class="string">","</span>mp4<span class="string">")</span></span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;figure class=&quot;highlight php&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;
+      
+    
+    </summary>
+    
+    
+      <category term="php" scheme="https://vbee.club/categories/php/"/>
+    
+    
+      <category term="download" scheme="https://vbee.club/tags/download/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>php utf8去除Bom头</title>
+    <link href="https://vbee.club/2020/03/12/php_clear_utf8_bom/"/>
+    <id>https://vbee.club/2020/03/12/php_clear_utf8_bom/</id>
+    <published>2020-03-12T02:26:03.000Z</published>
+    <updated>2020-03-12T02:26:03.000Z</updated>
+    
+    <content type="html"><![CDATA[<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">去除Bom头</span><br><span class="line">     <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 去掉UTF-8 Bom头。</span></span><br><span class="line"><span class="comment">     * Remove UTF-8 Bom.</span></span><br><span class="line"><span class="comment">     * </span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span>  string    $string</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@access</span> public</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span> string</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="function"><span class="keyword">function</span> <span class="title">removeUTF8Bom</span><span class="params">($string)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(substr($string, <span class="number">0</span>, <span class="number">3</span>) == pack(<span class="string">'CCC'</span>, <span class="number">239</span>, <span class="number">187</span>, <span class="number">191</span>)) <span class="keyword">return</span> substr($string, <span class="number">3</span>);</span><br><span class="line">        <span class="keyword">return</span> $string;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;figure class=&quot;highlight php&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;
+      
+    
+    </summary>
+    
+    
+      <category term="php" scheme="https://vbee.club/categories/php/"/>
+    
+    
+      <category term="utf8" scheme="https://vbee.club/tags/utf8/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>php base64转图片</title>
+    <link href="https://vbee.club/2020/03/12/php_base64toamages/"/>
+    <id>https://vbee.club/2020/03/12/php_base64toamages/</id>
+    <published>2020-03-12T02:26:03.000Z</published>
+    <updated>2020-03-12T02:26:03.000Z</updated>
+    
+    <content type="html"><![CDATA[<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">upload2</span><span class="params">()</span></span>&#123;</span><br><span class="line">        $pid = $_SESSION[<span class="string">'cmpid'</span>];</span><br><span class="line">        $model=<span class="string">'communication'</span>;</span><br><span class="line">        $categpry=<span class="string">'img'</span>;</span><br><span class="line">        <span class="keyword">if</span> (preg_match(<span class="string">'/^(data:\s*image\/(\w+);base64,)/'</span>, <span class="keyword">$this</span>-&gt;post-&gt;file, $result)) &#123;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">            $ramd = <span class="keyword">$this</span>-&gt;loadModel(<span class="string">'businesscard'</span>)-&gt;random(<span class="number">6</span>, <span class="number">0</span>);</span><br><span class="line">            $type = $result[<span class="number">2</span>];</span><br><span class="line"></span><br><span class="line">            $new_file =<span class="string">'slidimg/'</span>.time() . $ramd . <span class="string">'.'</span> . $type;</span><br><span class="line"></span><br><span class="line"><span class="comment">//            $new_file = "./test.&#123;$type&#125;";</span></span><br><span class="line">            <span class="keyword">if</span> (file_put_contents($new_file, base64_decode(str_replace($result[<span class="number">1</span>], <span class="string">''</span>, <span class="keyword">$this</span>-&gt;post-&gt;file)))) &#123;</span><br><span class="line"><span class="comment">//                $ym = date('Ym', time());</span></span><br><span class="line"><span class="comment">//                $upload_path = $this-&gt;app-&gt;getAppRoot() . "www/data/upload/" . $model . '/' . $categpry . '/' . $ym . "/"; //上传文件的存放路径</span></span><br><span class="line"><span class="comment">//                //开始移动文件到相应的文件夹</span></span><br><span class="line"><span class="comment">//                if (!file_exists($upload_path)) &#123;</span></span><br><span class="line"><span class="comment">//                    mkdir($upload_path, 0777, true);//创建目录</span></span><br><span class="line"><span class="comment">//                &#125;</span></span><br><span class="line"><span class="comment">//                if (copy('/module/communication/1512122578eT7Vin.jpeg','/www/data/upload/communication/img/201712/s.jpeg')) &#123;</span></span><br><span class="line"><span class="comment">//                    echo  "ok";</span></span><br><span class="line"><span class="comment">//                &#125; else &#123;</span></span><br><span class="line"><span class="comment">//                    echo 'false';</span></span><br><span class="line"><span class="comment">//                &#125;</span></span><br><span class="line"></span><br><span class="line">                <span class="keyword">$this</span>-&gt;dao-&gt;insert(TABLE_CSLIDERIMG)</span><br><span class="line">                    -&gt;set(<span class="string">'url'</span>)-&gt;eq(<span class="string">'module/communication/'</span>.$new_file)</span><br><span class="line">                    -&gt;set(<span class="string">'create_time'</span>)-&gt;eq(helper::now(time()))</span><br><span class="line">                    -&gt;set(<span class="string">'cpid'</span>)-&gt;eq($pid)</span><br><span class="line">                    -&gt;exec();</span><br><span class="line"></span><br><span class="line">                <span class="keyword">echo</span> <span class="string">'新文件保存成功：'</span>, $new_file;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"><span class="comment">//            echo 'xxx----' . $a;</span></span><br><span class="line"><span class="comment">//        $pid = ‘123124afeewrt234’;</span></span><br><span class="line"><span class="comment">//        $upload=$this-&gt;communication-&gt;uploadimg($pid);</span></span><br><span class="line"><span class="comment">//        echo $upload;</span></span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;figure class=&quot;highlight php&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;
+      
+    
+    </summary>
+    
+    
+      <category term="php" scheme="https://vbee.club/categories/php/"/>
+    
+    
+      <category term="base64" scheme="https://vbee.club/tags/base64/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>php 文件下载</title>
+    <link href="https://vbee.club/2020/03/12/php_download_file/"/>
+    <id>https://vbee.club/2020/03/12/php_download_file/</id>
+    <published>2020-03-12T02:26:03.000Z</published>
+    <updated>2020-03-12T02:26:03.000Z</updated>
+    
+    <content type="html"><![CDATA[<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">文件下载</span><br><span class="line">$fileName = ROOT_PATH.<span class="string">'/public/export/d58c42391a0cc5419a34c2a5eca19409abc904af954e0327561cbd1cee18ee20.html'</span>; <span class="comment">//得到文件名</span></span><br><span class="line">        header( <span class="string">"Content-Disposition:  attachment;  filename="</span>.$fileName); <span class="comment">//告诉浏览器通过附件形式来处理文件</span></span><br><span class="line">        header(<span class="string">'Content-Length: '</span> . filesize($fileName)); <span class="comment">//下载文件大小</span></span><br><span class="line">        readfile($fileName);  <span class="comment">//读取文件内容</span></span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;figure class=&quot;highlight php&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;
+      
+    
+    </summary>
+    
+    
+      <category term="php" scheme="https://vbee.club/categories/php/"/>
+    
+    
+      <category term="download" scheme="https://vbee.club/tags/download/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>php 下载远程图片到本地</title>
+    <link href="https://vbee.club/2020/03/12/php_download_image/"/>
+    <id>https://vbee.club/2020/03/12/php_download_image/</id>
+    <published>2020-03-12T02:26:03.000Z</published>
+    <updated>2020-03-12T02:26:03.000Z</updated>
+    
+    <content type="html"><![CDATA[<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">下载远程图片到本地</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 下载远程图片保存到本地</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@access</span> public</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return</span> array</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@params</span> string $url 远程图片地址</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@params</span> string $save_dir 需要保存的地址</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@params</span> string $filename 保存文件名</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">download</span><span class="params">($url, $save_dir = <span class="string">'./publicimgs/'</span>,$filename=<span class="string">''</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(trim($save_dir)==<span class="string">''</span>)</span><br><span class="line">        $save_dir=<span class="string">'./'</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span>(trim($filename)==<span class="string">''</span>)&#123;<span class="comment">//保存文件名</span></span><br><span class="line">        $allowExt = <span class="keyword">array</span>(<span class="string">'gif'</span>, <span class="string">'jpg'</span>, <span class="string">'jpeg'</span>, <span class="string">'png'</span>, <span class="string">'bmp'</span>);</span><br><span class="line">        $ext=strrchr($url,<span class="string">'.'</span>);</span><br><span class="line">        <span class="keyword">if</span>(!in_array($ext,$allowExt))</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">array</span>(<span class="string">'file_name'</span>=&gt;<span class="string">''</span>,<span class="string">'save_path'</span>=&gt;<span class="string">''</span>,<span class="string">'error'</span>=&gt;<span class="number">3</span>);</span><br><span class="line"></span><br><span class="line">        $filename=time().$ext;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(<span class="number">0</span>!==strrpos($save_dir,<span class="string">'/'</span>))</span><br><span class="line">        $save_dir.=<span class="string">'/'</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//创建保存目录</span></span><br><span class="line">    <span class="keyword">if</span>(!file_exists($save_dir)&amp;&amp;!mkdir($save_dir,<span class="number">0777</span>,<span class="keyword">true</span>))</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">array</span>(<span class="string">'file_name'</span>=&gt;<span class="string">''</span>,<span class="string">'save_path'</span>=&gt;<span class="string">''</span>,<span class="string">'error'</span>=&gt;<span class="number">5</span>);</span><br><span class="line"></span><br><span class="line">    $ch = curl_init();</span><br><span class="line">    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, <span class="keyword">false</span>); <span class="comment">// 信任任何证书</span></span><br><span class="line">    curl_setopt($ch, CURLOPT_URL, $url);</span><br><span class="line">    curl_setopt($ch, CURLOPT_RETURNTRANSFER, <span class="number">1</span>);</span><br><span class="line">    curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, <span class="number">30</span>);</span><br><span class="line">    $file = curl_exec($ch);</span><br><span class="line">    curl_close($ch);</span><br><span class="line">    $resource = fopen($save_dir . $filename, <span class="string">'a'</span>);</span><br><span class="line">    fwrite($resource, $file);</span><br><span class="line">    fclose($resource);</span><br><span class="line">    <span class="keyword">unset</span>($file,$url);</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">array</span>(<span class="string">'file_name'</span>=&gt;$filename,<span class="string">'save_path'</span>=&gt;$save_dir.$filename,<span class="string">'error'</span>=&gt;<span class="number">0</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;figure class=&quot;highlight php&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;
+      
+    
+    </summary>
+    
+    
+      <category term="php" scheme="https://vbee.club/categories/php/"/>
+    
+    
+      <category term="download" scheme="https://vbee.club/tags/download/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>php 下载视频</title>
+    <link href="https://vbee.club/2020/03/12/php_download_video/"/>
+    <id>https://vbee.club/2020/03/12/php_download_video/</id>
+    <published>2020-03-12T02:26:03.000Z</published>
+    <updated>2020-03-12T02:26:03.000Z</updated>
+    
+    <content type="html"><![CDATA[<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">下载视频</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">downVideo</span><span class="params">($url,$filePath)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"><span class="comment">//初始化</span></span><br><span class="line">    $curl = curl_init();</span><br><span class="line"><span class="comment">//设置抓取的url</span></span><br><span class="line">    curl_setopt($curl, CURLOPT_URL, $url);</span><br><span class="line"><span class="comment">//打开文件描述符</span></span><br><span class="line">    $fp = fopen ($filePath, <span class="string">'w+'</span>);</span><br><span class="line">    curl_setopt($curl, CURLOPT_FILE, $fp);</span><br><span class="line"><span class="comment">//这个选项是意思是跳转，如果你访问的页面跳转到另一个页面，也会模拟访问。</span></span><br><span class="line">    curl_setopt($curl, CURLOPT_FOLLOWLOCATION, <span class="keyword">true</span>);</span><br><span class="line">    curl_setopt($curl,CURLOPT_TIMEOUT,<span class="number">50</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//执行命令</span></span><br><span class="line">    curl_exec($curl);</span><br><span class="line"><span class="comment">//关闭URL请求</span></span><br><span class="line">    curl_close($curl);</span><br><span class="line"><span class="comment">//关闭文件描述符</span></span><br><span class="line">    fclose($fp);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">downVideo(<span class="string">"http://public.geek-in.net/clouddisk/bSCrjZKXyR.mp4"</span>, $root_dir . <span class="string">'cs.mp4'</span>);</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;figure class=&quot;highlight php&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;
+      
+    
+    </summary>
+    
+    
+      <category term="php" scheme="https://vbee.club/categories/php/"/>
+    
+    
+      <category term="video" scheme="https://vbee.club/tags/video/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>php 裁剪图片</title>
+    <link href="https://vbee.club/2020/03/12/php_cut_image/"/>
+    <id>https://vbee.club/2020/03/12/php_cut_image/</id>
+    <published>2020-03-12T02:26:03.000Z</published>
+    <updated>2020-03-12T02:26:03.000Z</updated>
+    
+    <content type="html"><![CDATA[<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">裁剪图片</span><br><span class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">upload3</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        $pid = $_SESSION[<span class="string">'cmpid'</span>];</span><br><span class="line">        $allow_type = <span class="keyword">array</span>(<span class="string">'jpg'</span>, <span class="string">'jpeg'</span>, <span class="string">'gif'</span>, <span class="string">'png'</span>); <span class="comment">//定义允许上传的类型</span></span><br><span class="line">        $file = <span class="keyword">$this</span>-&gt;loadModel(<span class="string">'businesscard'</span>)-&gt;file($_FILES[<span class="string">'file'</span>], $allow_type, <span class="string">'communication'</span>, <span class="string">'img'</span>);</span><br><span class="line">        $ramd = <span class="keyword">$this</span>-&gt;loadModel(<span class="string">'businesscard'</span>)-&gt;random(<span class="number">6</span>, <span class="number">0</span>);</span><br><span class="line">        $filename=time() . $ramd;</span><br><span class="line">        <span class="keyword">if</span> ($file) &#123;</span><br><span class="line">            $left = <span class="keyword">$this</span>-&gt;post-&gt;left;</span><br><span class="line">            $width = <span class="keyword">$this</span>-&gt;post-&gt;width;</span><br><span class="line">            $height = <span class="keyword">$this</span>-&gt;post-&gt;height;</span><br><span class="line">            $top = <span class="keyword">$this</span>-&gt;post-&gt;top;</span><br><span class="line"></span><br><span class="line">            $image = <span class="string">'../../'</span> . $file;</span><br><span class="line">            $source = imagecreatefromjpeg($image);</span><br><span class="line">            $croped = imagecreatetruecolor($width, $height);</span><br><span class="line">            imagecopy($croped, $source, <span class="number">0</span>, <span class="number">0</span>, $left, $top, $width, $height);</span><br><span class="line">            imagejpeg($croped, <span class="string">"$filename.jpg"</span>);</span><br><span class="line">            imagedestroy($croped);</span><br><span class="line">            unlink(<span class="string">'../../'</span> . $file);</span><br><span class="line">            $fielPath=preg_split(<span class="string">'/\//'</span>, $file);</span><br><span class="line">            <span class="keyword">if</span> (copy(<span class="string">"$filename.jpg"</span>, <span class="string">"../../$fielPath[0]/$fielPath[1]/$fielPath[2]/$fielPath[3]/$fielPath[4]/$fielPath[5]/$filename.jpg"</span>)) &#123;</span><br><span class="line">                unlink(<span class="string">"$filename.jpg"</span>);</span><br><span class="line">                <span class="keyword">$this</span>-&gt;dao-&gt;insert(TABLE_CSLIDERIMG)</span><br><span class="line">                    -&gt;set(<span class="string">'url'</span>)-&gt;eq(<span class="string">"$fielPath[0]/$fielPath[1]/$fielPath[2]/$fielPath[3]/$fielPath[4]/$fielPath[5]/$filename.jpg"</span>)</span><br><span class="line">                    -&gt;set(<span class="string">'create_time'</span>)-&gt;eq(helper::now(time()))</span><br><span class="line">                    -&gt;set(<span class="string">'cpid'</span>)-&gt;eq($pid)</span><br><span class="line">                    -&gt;exec();</span><br><span class="line">                <span class="keyword">echo</span> <span class="number">1</span>;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="keyword">echo</span> <span class="number">0</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">echo</span> <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;figure class=&quot;highlight php&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;
+      
+    
+    </summary>
+    
+    
+      <category term="php" scheme="https://vbee.club/categories/php/"/>
+    
+    
+      <category term="image" scheme="https://vbee.club/tags/image/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>php 获取区域网IP地址</title>
+    <link href="https://vbee.club/2020/03/12/php_get_ad_ip/"/>
+    <id>https://vbee.club/2020/03/12/php_get_ad_ip/</id>
+    <published>2020-03-12T02:26:03.000Z</published>
+    <updated>2020-03-12T02:26:03.000Z</updated>
+    
+    <content type="html"><![CDATA[<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">获取区域网IP地址</span><br><span class="line">        $host_name = exec(<span class="string">"hostname"</span>);</span><br><span class="line">        $host_ip = gethostbyname($host_name); <span class="comment">//获取本机的局域网IP</span></span><br><span class="line">        <span class="keyword">echo</span> $host_ip;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;figure class=&quot;highlight php&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;
+      
+    
+    </summary>
+    
+    
+      <category term="php" scheme="https://vbee.club/categories/php/"/>
+    
+    
+      <category term="network" scheme="https://vbee.club/tags/network/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>php excel导入导出</title>
+    <link href="https://vbee.club/2020/03/12/php_excel_in_output/"/>
+    <id>https://vbee.club/2020/03/12/php_excel_in_output/</id>
+    <published>2020-03-12T02:26:03.000Z</published>
+    <updated>2020-03-12T02:26:03.000Z</updated>
+    
+    <content type="html"><![CDATA[<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line">excel导出</span><br><span class="line"> <span class="keyword">include_once</span> <span class="string">'../../../lib/phpexcel/phpexcel.class.php'</span>;</span><br><span class="line">        $objPHPExcel  = <span class="keyword">new</span> \PHPExcel();</span><br><span class="line">        $objWriter =<span class="keyword">new</span> \PHPExcel_Writer_Excel2007($objPHPExcel);</span><br><span class="line"></span><br><span class="line">$objPHPExcel-&gt;createSheet();</span><br><span class="line">        $objPHPExcel-&gt;setactivesheetindex(<span class="number">5</span>);</span><br><span class="line">        $objPHPExcel-&gt;getActiveSheet(<span class="number">5</span>)-&gt;setCellValue(<span class="string">'A1'</span>, <span class="string">'项目'</span>);</span><br><span class="line">        $objPHPExcel-&gt;getActiveSheet(<span class="number">5</span>)-&gt;setCellValue(<span class="string">'B1'</span>, <span class="string">'修复成功'</span>);</span><br><span class="line">        $objPHPExcel-&gt;getActiveSheet(<span class="number">5</span>)-&gt;setCellValue(<span class="string">'C1'</span>, <span class="string">'修复失败'</span>);</span><br><span class="line">        $objPHPExcel-&gt;getActiveSheet(<span class="number">5</span>)-&gt;setTitle(<span class="string">'汇总'</span>);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        $objPHPExcel-&gt;getActiveSheet(<span class="number">5</span>)-&gt;setCellValue(<span class="string">'A2'</span>, <span class="string">'荔湾移动4G'</span>);</span><br><span class="line">        $objPHPExcel-&gt;getActiveSheet(<span class="number">5</span>)-&gt;setCellValue(<span class="string">'B2'</span>, $repair_data-&gt;yd4gs);</span><br><span class="line">        $objPHPExcel-&gt;getActiveSheet(<span class="number">5</span>)-&gt;setCellValue(<span class="string">'C2'</span>, $repair_data-&gt;yd4gf);</span><br><span class="line">  </span><br><span class="line"><span class="comment">//导出</span></span><br><span class="line"> $path=<span class="string">'../../../www/data/excelexport'</span>;</span><br><span class="line">        $filename = time() . <span class="string">'.xls'</span>;</span><br><span class="line">        $objWriter-&gt;save(<span class="string">"$path/$filename"</span>);</span><br><span class="line"></span><br><span class="line">        $name = $filename;</span><br><span class="line">        $fileName = $path.<span class="string">'/'</span> . $name; <span class="comment">//得到文件名</span></span><br><span class="line">        header(<span class="string">"Content-Disposition:  attachment;  filename="</span> . $fileName); <span class="comment">//告诉浏览器通过附件形式来处理文件</span></span><br><span class="line">        header(<span class="string">'Content-Length: '</span> . filesize($fileName)); <span class="comment">//下载文件大小</span></span><br><span class="line">        readfile($fileName);  <span class="comment">//读取文件内容</span></span><br><span class="line">excel导入</span><br><span class="line"> <span class="keyword">include_once</span> <span class="string">'../../../lib/phpexcel/phpexcel.class.php'</span>;</span><br><span class="line">        $file = $_FILES[<span class="string">'file'</span>];</span><br><span class="line">        <span class="keyword">if</span> ($file[<span class="string">'error'</span>] == <span class="number">4</span>) <span class="keyword">$this</span>-&gt;error(<span class="string">'请选择上传excel文件'</span>);</span><br><span class="line">        $file_types = explode ( <span class="string">"."</span>, $file[<span class="string">'name'</span>] );</span><br><span class="line">        $excel_type = <span class="keyword">array</span>(<span class="string">'xls'</span>,<span class="string">'csv'</span>,<span class="string">'xlsx'</span>);</span><br><span class="line">        <span class="keyword">if</span> (!in_array(strtolower(end($file_types)),$excel_type))&#123;</span><br><span class="line">            <span class="keyword">$this</span>-&gt;error(<span class="string">"不是Excel文件，请重新上传"</span>);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//哪一行开始是实际数据</span></span><br><span class="line">        $start_index=<span class="number">2</span>;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//设置获取excel对象</span></span><br><span class="line">        $objReader = \PHPExcel_IOFactory::createReader(<span class="string">'Excel2007'</span>);<span class="comment">//配置成2003版本，因为office版本可以向下兼容</span></span><br><span class="line"></span><br><span class="line">   $objPHPExcel = $objReader-&gt;load($file[<span class="string">'tmp_name'</span>],$encode=<span class="string">'utf-8'</span>);<span class="comment">//$file 为解读的excel文件</span></span><br><span class="line"> $sheet = $objPHPExcel-&gt;getSheet(<span class="number">0</span>);</span><br><span class="line">        $highestRow = $sheet-&gt;getHighestRow()+$start_index; <span class="comment">// 取得总行数</span></span><br><span class="line">        $success_item = $fail_item = <span class="number">0</span>;</span><br><span class="line"> <span class="keyword">for</span>($j=$start_index;$j&lt;=$highestRow;$j++)</span><br><span class="line">        &#123;</span><br><span class="line">            $mt_number = $objPHPExcel-&gt;getActiveSheet()-&gt;getCell(<span class="string">"G"</span>.$j)-&gt;getValue();<span class="comment">//平台监控点编号</span></span><br><span class="line">&#125;</span><br><span class="line">Response::success(<span class="string">'成功条数:'</span>.$success_item.<span class="string">'，失败条数：'</span>.$fail_item);</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;figure class=&quot;highlight php&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;
+      
+    
+    </summary>
+    
+    
+      <category term="php" scheme="https://vbee.club/categories/php/"/>
+    
+    
+      <category term="excel" scheme="https://vbee.club/tags/excel/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>php curl的get-post方式</title>
+    <link href="https://vbee.club/2020/03/12/php_get_post_curl/"/>
+    <id>https://vbee.club/2020/03/12/php_get_post_curl/</id>
+    <published>2020-03-12T02:26:03.000Z</published>
+    <updated>2020-03-12T02:26:03.000Z</updated>
+    
+    <content type="html"><![CDATA[<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br></pre></td><td class="code"><pre><span class="line">curl的get-post方式</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * post请求</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> $url</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> $postdata</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return</span> mixed</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">get_component</span><span class="params">($url,$postdata)</span></span>&#123;</span><br><span class="line"></span><br><span class="line">    $ch = curl_init(); <span class="comment">//用curl发送数据给api</span></span><br><span class="line">    curl_setopt($ch,CURLOPT_HTTPHEADER,$header);</span><br><span class="line">    curl_setopt( $ch, CURLOPT_POST, <span class="keyword">true</span> );</span><br><span class="line">    curl_setopt( $ch, CURLOPT_RETURNTRANSFER, <span class="keyword">true</span> );</span><br><span class="line">    curl_setopt( $ch, CURLOPT_URL, $url );</span><br><span class="line">    curl_setopt( $ch, CURLOPT_POSTFIELDS, $postdata );</span><br><span class="line">    curl_setopt( $ch, CURLOPT_SSL_VERIFYPEER, <span class="keyword">FALSE</span> );</span><br><span class="line">    curl_setopt( $ch, CURLOPT_SSL_VERIFYHOST, <span class="keyword">FALSE</span> );</span><br><span class="line">    $response = curl_exec($ch);</span><br><span class="line">    curl_close( $ch );</span><br><span class="line">    $rest = json_decode($response,<span class="keyword">true</span>);</span><br><span class="line">    <span class="keyword">return</span> $rest;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * post请求 row形式</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> $url</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> $postdata</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return</span> mixed</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">post_row</span><span class="params">($url,$post_data)</span></span>&#123;</span><br><span class="line">$ch = curl_init();</span><br><span class="line">            curl_setopt($ch, CURLOPT_POST, <span class="number">1</span>);</span><br><span class="line">            curl_setopt($ch, CURLOPT_URL, $url);</span><br><span class="line">            curl_setopt($ch, CURLOPT_POSTFIELDS, $post_data);</span><br><span class="line">            curl_setopt($ch, CURLOPT_RETURNTRANSFER, <span class="number">1</span>);</span><br><span class="line">            curl_setopt($ch, CURLOPT_HTTPHEADER, <span class="keyword">array</span>(</span><br><span class="line">                    <span class="string">'Content-Type: application/json; charset=utf-8'</span>,</span><br><span class="line">                    <span class="string">'Content-Length: '</span> . strlen($post_data)</span><br><span class="line">                )</span><br><span class="line">            );</span><br><span class="line">            $response = curl_exec($ch);</span><br><span class="line">            $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);</span><br><span class="line">            curl_close($ch);</span><br><span class="line"></span><br><span class="line">            <span class="keyword">return</span> $response;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * get请求</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> $url</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return</span> mixed</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">curlget</span><span class="params">($url)</span></span>&#123;</span><br><span class="line">    $ch = curl_init();</span><br><span class="line"></span><br><span class="line">    curl_setopt($ch, CURLOPT_URL, $url);</span><br><span class="line">    curl_setopt($ch, CURLOPT_RETURNTRANSFER, <span class="number">1</span>);</span><br><span class="line">    curl_setopt($ch, CURLOPT_HEADER, <span class="number">0</span>);</span><br><span class="line">    curl_setopt( $ch, CURLOPT_SSL_VERIFYPEER, <span class="keyword">FALSE</span> );</span><br><span class="line">    curl_setopt( $ch, CURLOPT_SSL_VERIFYHOST, <span class="keyword">FALSE</span> );</span><br><span class="line">    $response = curl_exec($ch);</span><br><span class="line">    curl_close( $ch );</span><br><span class="line">    $rest = json_decode($response,<span class="keyword">true</span>);</span><br><span class="line">    <span class="keyword">return</span> $rest;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;figure class=&quot;highlight php&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;
+      
+    
+    </summary>
+    
+    
+      <category term="php" scheme="https://vbee.club/categories/php/"/>
+    
+    
+      <category term="curl" scheme="https://vbee.club/tags/curl/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>php 百度地图经纬度转腾讯地图经纬度</title>
+    <link href="https://vbee.club/2020/03/12/php_get_jwd/"/>
+    <id>https://vbee.club/2020/03/12/php_get_jwd/</id>
+    <published>2020-03-12T02:26:03.000Z</published>
+    <updated>2020-03-12T02:26:03.000Z</updated>
+    
+    <content type="html"><![CDATA[<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">百度地图经纬度转腾讯地图经纬度</span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 百度地图经纬度转腾讯地图经纬度</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> $lat</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> $lon</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span> string</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">map_bd2tx</span><span class="params">($lat, $lon)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        $tx_lat = <span class="number">0</span>;</span><br><span class="line">        $tx_lon = <span class="number">0</span>;</span><br><span class="line">        $x_pi = <span class="number">3.14159265358979324</span>;</span><br><span class="line">        $x = $lon - <span class="number">0.0065</span>;</span><br><span class="line">        $y = $lat - <span class="number">0.006</span>;</span><br><span class="line"><span class="comment">//Math</span></span><br><span class="line">        $z = sqrt($x * $x + $y * $y) - <span class="number">0.00002</span> * sin($y * $x_pi);</span><br><span class="line">        $theta = atan2($y, $x) - <span class="number">0.000003</span> * cos($x * $x_pi);</span><br><span class="line">        $tx_lon = $z * cos($theta);</span><br><span class="line">        $tx_lat = $z * sin($theta);</span><br><span class="line">        <span class="keyword">return</span> $tx_lat . <span class="string">","</span> . $tx_lon;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;figure class=&quot;highlight php&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;
+      
+    
+    </summary>
+    
+    
+      <category term="php" scheme="https://vbee.club/categories/php/"/>
+    
+    
+      <category term="map" scheme="https://vbee.club/tags/map/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>php 获取近1年的所有月份</title>
+    <link href="https://vbee.club/2020/03/12/php_get_year/"/>
+    <id>https://vbee.club/2020/03/12/php_get_year/</id>
+    <published>2020-03-12T02:26:03.000Z</published>
+    <updated>2020-03-12T02:26:03.000Z</updated>
+    
+    <content type="html"><![CDATA[<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">获取近<span class="number">1</span>年的所有月份</span><br><span class="line"> $z = date(<span class="string">'Y-m'</span>);</span><br><span class="line">            $a = date(<span class="string">'Y-m'</span>, strtotime(<span class="string">'-12 months'</span>));</span><br><span class="line">            $begin = <span class="keyword">new</span> DateTime($a);</span><br><span class="line">            $end = <span class="keyword">new</span> DateTime($z);</span><br><span class="line">            $end = $end-&gt;modify(<span class="string">'+1 month'</span>);</span><br><span class="line">            $interval = <span class="keyword">new</span> DateInterval(<span class="string">'P1M'</span>);</span><br><span class="line">            $daterange = <span class="keyword">new</span> DatePeriod($begin, $interval ,$end);</span><br><span class="line"></span><br><span class="line">            <span class="keyword">foreach</span>($daterange <span class="keyword">as</span> $date)&#123;</span><br><span class="line">                <span class="keyword">echo</span> $date-&gt;format(<span class="string">"Y-m"</span>) . <span class="string">"&lt;br /&gt;"</span>;</span><br><span class="line">            &#125;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;figure class=&quot;highlight php&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;
+      
+    
+    </summary>
+    
+    
+      <category term="php" scheme="https://vbee.club/categories/php/"/>
+    
+    
+      <category term="date" scheme="https://vbee.club/tags/date/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>php 图片合成</title>
+    <link href="https://vbee.club/2020/03/12/php_input_image/"/>
+    <id>https://vbee.club/2020/03/12/php_input_image/</id>
+    <published>2020-03-12T02:26:03.000Z</published>
+    <updated>2020-03-12T02:26:03.000Z</updated>
+    
+    <content type="html"><![CDATA[<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line">图片合成</span><br><span class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">shareimg</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        $id = $_POST[<span class="string">'uid'</span>];</span><br><span class="line"><span class="comment">//二维码图片</span></span><br><span class="line">        $qrodeimg = <span class="keyword">$this</span>-&gt;getWxappQrCode($id);</span><br><span class="line"><span class="comment">//背景图片</span></span><br><span class="line">        $bannerimg = ROOT_PATH . <span class="string">'/public/wxcode/back_one.png'</span>;</span><br><span class="line">        <span class="comment">//这是需要插入到背景图的图片url</span></span><br><span class="line"><span class="comment">//        $qrodeimg = ROOT_PATH . '/public/wxcode/qrcode1.png';</span></span><br><span class="line">        <span class="comment">//用户信息</span></span><br><span class="line">        <span class="comment">//这是需要插入到背景图的图片url</span></span><br><span class="line"><span class="comment">//        $head_img = $user['head_img'];</span></span><br><span class="line">        <span class="comment">//这是要插入到图片的文字</span></span><br><span class="line"><span class="comment">//        $tip1 = "长按小程序码可以查看我的名片，";</span></span><br><span class="line"><span class="comment">//        $tip2 = "即可领取红包！";</span></span><br><span class="line"><span class="comment">//        $text = $user['nickname'] . "发了一个口令红包";</span></span><br><span class="line">        <span class="keyword">if</span> ($bannerimg) &#123;</span><br><span class="line">            <span class="comment">//生成中间带logo的二维码</span></span><br><span class="line">            <span class="comment">//这是合成后的图片保存的路径</span></span><br><span class="line">            $upload_dir = <span class="string">"/public/wxcode/"</span>;</span><br><span class="line">            <span class="keyword">if</span> (is_file($bannerimg)) &#123;</span><br><span class="line">                <span class="comment">//创建画布</span></span><br><span class="line">                $logo = imagecreatefromstring(file_get_contents($bannerimg));</span><br><span class="line">                $head_img1 = imagecreatefromstring(file_get_contents($qrodeimg));</span><br><span class="line"><span class="comment">//                $head_img2 = imagecreatefromstring(file_get_contents($head_img));</span></span><br><span class="line"></span><br><span class="line">                <span class="comment">//写入文字</span></span><br><span class="line"><span class="comment">//                $msg = imagecolorallocate($logo, 255, 225, 177);</span></span><br><span class="line"><span class="comment">//                $black = imagecolorallocate($logo, 255, 225, 177);</span></span><br><span class="line"><span class="comment">//                $grey = imagecolorallocate($logo, 255, 225, 177);</span></span><br><span class="line">                <span class="comment">//写的文字用到的字体</span></span><br><span class="line"><span class="comment">//                $font = ROOT_PATH . '/statics/font/black_font.ttf';</span></span><br><span class="line">                <span class="comment">//将$qrodeimg插入到$bannerimg里</span></span><br><span class="line">                imagecopyresampled($logo, $head_img1, <span class="number">80</span>, <span class="number">80</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">200</span>, <span class="number">200</span>, imagesx($head_img1), imagesy($head_img1));</span><br><span class="line">                <span class="comment">//将$head_img插入到$bannerimg里</span></span><br><span class="line"><span class="comment">//                imagecopyresampled($logo, $head_img2, 400, 30, 0, 0, 100, 100, imagesx($head_img2), imagesy($head_img2));</span></span><br><span class="line"></span><br><span class="line">                <span class="comment">//在图片里插入文字($msg,$black,$grey)</span></span><br><span class="line"><span class="comment">//                imagettftext($logo, 24, 0, 280, 180, $msg,$font, $text);</span></span><br><span class="line"><span class="comment">//                imagettftext($logo, 30, 0, 170, 280, $black,$font, $tip1);</span></span><br><span class="line"><span class="comment">//                imagettftext($logo, 30, 0, 330, 340, $grey, $font, $tip2);</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">                $rans = rand(<span class="number">100</span>,<span class="number">900</span>).time().<span class="string">'code'</span>.<span class="string">'.png'</span>;</span><br><span class="line">                <span class="comment">//生成图片</span></span><br><span class="line">                imagepng($logo, ROOT_PATH . $upload_dir . $rans);</span><br><span class="line">                <span class="comment">//生成图片名字</span></span><br><span class="line"><span class="comment">//                $twocode = $upload_dir . '97243655qrcode' . '.png'; //如果存在logo就生成带logo的</span></span><br><span class="line">                $twocode = $rans; <span class="comment">//如果存在logo就生成带logo的</span></span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">//返回结果图片url</span></span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> Success([<span class="string">'data'</span> =&gt; <span class="string">'http://'</span>.$_SERVER[<span class="string">'HTTP_HOST'</span>].<span class="string">'/wxcode/'</span>.$twocode]);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;figure class=&quot;highlight php&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;
+      
+    
+    </summary>
+    
+    
+      <category term="php" scheme="https://vbee.club/categories/php/"/>
+    
+    
+      <category term="image" scheme="https://vbee.club/tags/image/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>php Hmac加密</title>
+    <link href="https://vbee.club/2020/03/12/php_hmac_pass/"/>
+    <id>https://vbee.club/2020/03/12/php_hmac_pass/</id>
+    <published>2020-03-12T02:26:03.000Z</published>
+    <updated>2020-03-12T02:26:03.000Z</updated>
+    
+    <content type="html"><![CDATA[<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Hmac加密</span><br><span class="line"><span class="keyword">private</span> <span class="function"><span class="keyword">function</span> <span class="title">computeSignature</span><span class="params">($accessSecret, $canonicalString)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        $s = hash_hmac(<span class="string">'sha256'</span>, $canonicalString, $accessSecret, <span class="keyword">true</span>);</span><br><span class="line">        <span class="keyword">return</span> base64_encode($s);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;figure class=&quot;highlight php&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;
+      
+    
+    </summary>
+    
+    
+      <category term="php" scheme="https://vbee.club/categories/php/"/>
+    
+    
+      <category term="sha256" scheme="https://vbee.club/tags/sha256/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>php 判断ip是否在允许范围内</title>
+    <link href="https://vbee.club/2020/03/12/php_ip_fw/"/>
+    <id>https://vbee.club/2020/03/12/php_ip_fw/</id>
+    <published>2020-03-12T02:26:03.000Z</published>
+    <updated>2020-03-12T02:26:03.000Z</updated>
+    
+    <content type="html"><![CDATA[<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">判断ip是否在允许范围内</span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 检查ip是否在允许范围</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> $host_ip</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span> bool</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">   <span class="keyword">private</span> <span class="function"><span class="keyword">function</span> <span class="title">checkIP</span><span class="params">($host_ip)</span></span>&#123;</span><br><span class="line">       $alip = <span class="string">'192.1.*.*'</span>;</span><br><span class="line">       $start_ip = $alip;</span><br><span class="line">       <span class="keyword">foreach</span> ($alip <span class="keyword">as</span> $ind=&gt;$item) &#123;</span><br><span class="line">           <span class="keyword">if</span>($item==<span class="string">'*'</span>)&#123;</span><br><span class="line">               $alip[$ind]=<span class="number">255</span>;</span><br><span class="line">               $start_ip[$ind] = <span class="number">1</span>;</span><br><span class="line">           &#125;</span><br><span class="line">       &#125;</span><br><span class="line">       $end_id = implode(<span class="string">'.'</span>, $alip);</span><br><span class="line">       $start_ip = implode(<span class="string">'.'</span>, $start_ip);</span><br><span class="line"></span><br><span class="line">       $host_ip = bindec(decbin(ip2long($host_ip)));</span><br><span class="line">       $start_ip=bindec(decbin(ip2long($start_ip)));</span><br><span class="line">       $end_id=bindec(decbin(ip2long($end_id)));</span><br><span class="line">       <span class="keyword">if</span>($start_ip&lt;=$host_ip&amp;&amp;$host_ip&lt;=$end_id)&#123;</span><br><span class="line">           <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">       &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">           <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">       &#125;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;figure class=&quot;highlight php&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;
+      
+    
+    </summary>
+    
+    
+      <category term="php" scheme="https://vbee.club/categories/php/"/>
+    
+    
+      <category term="network" scheme="https://vbee.club/tags/network/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>php post请求json中文字符被转码</title>
+    <link href="https://vbee.club/2020/03/12/php_json_ccode/"/>
+    <id>https://vbee.club/2020/03/12/php_json_ccode/</id>
+    <published>2020-03-12T02:26:03.000Z</published>
+    <updated>2020-03-12T02:26:03.000Z</updated>
+    
+    <content type="html"><![CDATA[<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">post请求json中文字符被转码</span><br><span class="line"><span class="comment">//强制不转码</span></span><br><span class="line">json_encode($json,JSON_UNESCAPED_UNICODE)</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;figure class=&quot;highlight php&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;
+      
+    
+    </summary>
+    
+    
+      <category term="php" scheme="https://vbee.club/categories/php/"/>
+    
+    
+      <category term="json" scheme="https://vbee.club/tags/json/"/>
+    
+  </entry>
+  
+</feed>
