@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://baxiprince.github.io/"/>
-  <updated>2020-03-12T02:17:03.000Z</updated>
+  <updated>2020-03-12T02:26:03.000Z</updated>
   <id>https://baxiprince.github.io/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>B4A 关闭严格模式</title>
+    <link href="https://baxiprince.github.io/2020/03/12/B4A_close_ygms/"/>
+    <id>https://baxiprince.github.io/2020/03/12/B4A_close_ygms/</id>
+    <published>2020-03-12T02:26:03.000Z</published>
+    <updated>2020-03-12T02:26:03.000Z</updated>
+    
+    <content type="html"><![CDATA[<figure class="highlight vb"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">Sub</span> DisableStrictMode</span><br><span class="line">  <span class="comment">'关闭严格模式</span></span><br><span class="line">  <span class="keyword">Dim</span> jo <span class="keyword">As</span> JavaObject</span><br><span class="line">  jo.InitializeStatic(<span class="string">"android.os.Build.VERSION"</span>)</span><br><span class="line">  <span class="keyword">If</span> jo.GetField(<span class="string">"SDK_INT"</span>) &gt; <span class="number">9</span> <span class="keyword">Then</span></span><br><span class="line">    <span class="keyword">Dim</span> policy <span class="keyword">As</span> JavaObject</span><br><span class="line">    policy = policy.InitializeNewInstance(<span class="string">"android.os.StrictMode.ThreadPolicy.Builder"</span>, Null)</span><br><span class="line">    policy = policy.RunMethodJO(<span class="string">"permitAll"</span>, Null).RunMethodJO(<span class="string">"build"</span>, Null)</span><br><span class="line">    <span class="keyword">Dim</span> sm <span class="keyword">As</span> JavaObject</span><br><span class="line">    sm.InitializeStatic(<span class="string">"android.os.StrictMode"</span>).RunMethod(<span class="string">"setThreadPolicy"</span>, Array(policy))</span><br><span class="line">  <span class="keyword">End</span> <span class="keyword">If</span></span><br><span class="line"><span class="keyword">End</span> <span class="keyword">Sub</span></span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;figure class=&quot;highlight vb&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;l
+      
+    
+    </summary>
+    
+    
+      <category term="B4A" scheme="https://baxiprince.github.io/categories/B4A/"/>
+    
+    
+      <category term="B4A" scheme="https://baxiprince.github.io/tags/B4A/"/>
+    
+  </entry>
   
   <entry>
     <title>B4A打开文件夹</title>
