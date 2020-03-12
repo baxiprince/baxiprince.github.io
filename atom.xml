@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://baxiprince.github.io/"/>
-  <updated>2020-03-11T14:03:03.000Z</updated>
+  <updated>2020-03-12T02:17:03.000Z</updated>
   <id>https://baxiprince.github.io/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>B4A打开文件夹</title>
+    <link href="https://baxiprince.github.io/2020/03/12/B4A_open_fd/"/>
+    <id>https://baxiprince.github.io/2020/03/12/B4A_open_fd/</id>
+    <published>2020-03-12T02:17:03.000Z</published>
+    <updated>2020-03-12T02:17:03.000Z</updated>
+    
+    <content type="html"><![CDATA[<figure class="highlight vb"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">Try</span></span><br><span class="line"><span class="keyword">Dim</span> i <span class="keyword">As</span> Intent</span><br><span class="line">i.Initialize(i.ACTION_VIEW, <span class="string">"file://"</span> &amp;  File.DirRootExternal&amp;<span class="string">"/保存目录/"</span> )</span><br><span class="line">i.SetType( <span class="string">"resource/folder"</span> )</span><br><span class="line">StartActivity(i)</span><br><span class="line"><span class="keyword">Catch</span></span><br><span class="line">Msgbox(<span class="string">"Missing default file explorer"</span>, <span class="string">"Error"</span>)</span><br><span class="line"><span class="keyword">End</span> <span class="keyword">Try</span></span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;figure class=&quot;highlight vb&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;l
+      
+    
+    </summary>
+    
+    
+      <category term="B4A" scheme="https://baxiprince.github.io/categories/B4A/"/>
+    
+    
+      <category term="B4A" scheme="https://baxiprince.github.io/tags/B4A/"/>
+    
+  </entry>
   
   <entry>
     <title>VBA_MD5算法</title>
