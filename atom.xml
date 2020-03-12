@@ -71,6 +71,32 @@
   </entry>
   
   <entry>
+    <title>B4A 粘贴板使用方法</title>
+    <link href="https://baxiprince.github.io/2020/03/12/B4A_clp_use_eg/"/>
+    <id>https://baxiprince.github.io/2020/03/12/B4A_clp_use_eg/</id>
+    <published>2020-03-12T02:26:03.000Z</published>
+    <updated>2020-03-12T02:26:03.000Z</updated>
+    
+    <content type="html"><![CDATA[<figure class="highlight vbnet"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">Dim</span> clb <span class="keyword">As</span> BClipboard,dystr <span class="keyword">As</span> <span class="built_in">String</span></span><br><span class="line"><span class="comment">''必须先检测has否则程序崩溃</span></span><br><span class="line"><span class="keyword">If</span> clb.HasText <span class="keyword">Then</span></span><br><span class="line">dystr = clb.getText</span><br><span class="line"><span class="keyword">End</span> <span class="keyword">If</span></span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;figure class=&quot;highlight vbnet&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class
+      
+    
+    </summary>
+    
+    
+      <category term="B4A" scheme="https://baxiprince.github.io/categories/B4A/"/>
+    
+    
+      <category term="B4A" scheme="https://baxiprince.github.io/tags/B4A/"/>
+    
+  </entry>
+  
+  <entry>
     <title>CMD 获取本地wifi密码</title>
     <link href="https://baxiprince.github.io/2020/03/12/CMD_GET_WIFI_PASS/"/>
     <id>https://baxiprince.github.io/2020/03/12/CMD_GET_WIFI_PASS/</id>
@@ -99,6 +125,32 @@
   </entry>
   
   <entry>
+    <title>python MD5加密</title>
+    <link href="https://baxiprince.github.io/2020/03/12/python_MD5/"/>
+    <id>https://baxiprince.github.io/2020/03/12/python_MD5/</id>
+    <published>2020-03-12T02:26:03.000Z</published>
+    <updated>2020-03-12T02:26:03.000Z</updated>
+    
+    <content type="html"><![CDATA[<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> hashlib</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">strtomd5</span><span class="params">(md5_str)</span>:</span></span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        m_str = hashlib.md5()</span><br><span class="line">        byt = md5_str.encode(encoding=<span class="string">'utf-8'</span>)</span><br><span class="line">        m_str.update(byt)</span><br><span class="line">        str_md5 = m_str.hexdigest()</span><br><span class="line">        <span class="keyword">return</span> str_md5</span><br><span class="line">    <span class="keyword">except</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">None</span></span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;figure class=&quot;highlight py&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;l
+      
+    
+    </summary>
+    
+    
+      <category term="python" scheme="https://baxiprince.github.io/categories/python/"/>
+    
+    
+      <category term="MD5" scheme="https://baxiprince.github.io/tags/MD5/"/>
+    
+  </entry>
+  
+  <entry>
     <title>python mysql数据库 连接类</title>
     <link href="https://baxiprince.github.io/2020/03/12/python_cn_mysql_cls/"/>
     <id>https://baxiprince.github.io/2020/03/12/python_cn_mysql_cls/</id>
@@ -123,32 +175,6 @@
       <category term="python" scheme="https://baxiprince.github.io/tags/python/"/>
     
       <category term="mysql" scheme="https://baxiprince.github.io/tags/mysql/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>python MD5加密</title>
-    <link href="https://baxiprince.github.io/2020/03/12/python_MD5/"/>
-    <id>https://baxiprince.github.io/2020/03/12/python_MD5/</id>
-    <published>2020-03-12T02:26:03.000Z</published>
-    <updated>2020-03-12T02:26:03.000Z</updated>
-    
-    <content type="html"><![CDATA[<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> hashlib</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">strtomd5</span><span class="params">(md5_str)</span>:</span></span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        m_str = hashlib.md5()</span><br><span class="line">        byt = md5_str.encode(encoding=<span class="string">'utf-8'</span>)</span><br><span class="line">        m_str.update(byt)</span><br><span class="line">        str_md5 = m_str.hexdigest()</span><br><span class="line">        <span class="keyword">return</span> str_md5</span><br><span class="line">    <span class="keyword">except</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">None</span></span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;figure class=&quot;highlight py&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;l
-      
-    
-    </summary>
-    
-    
-      <category term="python" scheme="https://baxiprince.github.io/categories/python/"/>
-    
-    
-      <category term="MD5" scheme="https://baxiprince.github.io/tags/MD5/"/>
     
   </entry>
   
