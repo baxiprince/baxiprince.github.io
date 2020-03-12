@@ -71,6 +71,34 @@
   </entry>
   
   <entry>
+    <title>B4A 检测是否使用 VPN</title>
+    <link href="https://baxiprince.github.io/2020/03/12/B4A_CHEAK_TF_VPN/"/>
+    <id>https://baxiprince.github.io/2020/03/12/B4A_CHEAK_TF_VPN/</id>
+    <published>2020-03-12T02:26:03.000Z</published>
+    <updated>2020-03-12T02:26:03.000Z</updated>
+    
+    <content type="html"><![CDATA[<h4 id="提权"><a href="#提权" class="headerlink" title="提权"></a>提权</h4><figure class="highlight vb"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">AddPermission(android.permission.ACCESS_NETWORK_STATE)</span><br></pre></td></tr></table></figure><h4 id="源码"><a href="#源码" class="headerlink" title="源码"></a>源码</h4><figure class="highlight vb"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">Sub</span> tf_vpn() <span class="keyword">As</span> <span class="built_in">Boolean</span></span><br><span class="line"><span class="keyword">Try</span></span><br><span class="line"><span class="keyword">Dim</span> p <span class="keyword">As</span> Phone,tf <span class="keyword">As</span> <span class="built_in">Boolean</span>=<span class="literal">False</span></span><br><span class="line"><span class="keyword">If</span> p.SdkVersion &gt;= <span class="number">21</span> <span class="keyword">Then</span></span><br><span class="line"><span class="keyword">Dim</span> jobj <span class="keyword">As</span> JavaObject</span><br><span class="line">jobj.InitializeContext</span><br><span class="line"><span class="keyword">Dim</span> manager <span class="keyword">As</span> JavaObject = jobj.RunMethod(<span class="string">"getSystemService"</span>, Array(<span class="string">"connectivity"</span>))</span><br><span class="line"><span class="keyword">Dim</span> networks() <span class="keyword">As</span> <span class="built_in">Object</span> = manager.RunMethod(<span class="string">"getAllNetworks"</span>, Null)</span><br><span class="line"><span class="keyword">For</span> <span class="keyword">Each</span> network <span class="keyword">As</span> JavaObject <span class="keyword">In</span> networks</span><br><span class="line"><span class="keyword">Dim</span> capabilities <span class="keyword">As</span> JavaObject = manager.RunMethod(<span class="string">"getNetworkCapabilities"</span>, Array(network))</span><br><span class="line"><span class="keyword">Dim</span> IsVPN <span class="keyword">As</span> <span class="built_in">Boolean</span> = capabilities.RunMethod(<span class="string">"hasTransport"</span>, Array(<span class="number">4</span>)) <span class="comment">'TRANSPORT_VPN</span></span><br><span class="line"><span class="keyword">If</span> IsVPN <span class="keyword">Then</span> tf= <span class="literal">True</span></span><br><span class="line"><span class="keyword">Next</span></span><br><span class="line"><span class="keyword">If</span> tf <span class="keyword">Then</span></span><br><span class="line"><span class="keyword">Return</span> <span class="literal">True</span></span><br><span class="line"><span class="keyword">Else</span></span><br><span class="line"><span class="keyword">Return</span> <span class="literal">False</span></span><br><span class="line"><span class="keyword">End</span> <span class="keyword">If</span></span><br><span class="line"><span class="keyword">Else</span></span><br><span class="line"><span class="keyword">Return</span> <span class="literal">False</span></span><br><span class="line"><span class="keyword">End</span> <span class="keyword">If</span></span><br><span class="line"><span class="keyword">Catch</span></span><br><span class="line"><span class="keyword">Return</span> <span class="literal">False</span></span><br><span class="line"><span class="keyword">End</span> <span class="keyword">Try</span></span><br><span class="line"><span class="keyword">End</span> <span class="keyword">Sub</span></span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h4 id=&quot;提权&quot;&gt;&lt;a href=&quot;#提权&quot; class=&quot;headerlink&quot; title=&quot;提权&quot;&gt;&lt;/a&gt;提权&lt;/h4&gt;&lt;figure class=&quot;highlight vb&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span cla
+      
+    
+    </summary>
+    
+    
+      <category term="B4A" scheme="https://baxiprince.github.io/categories/B4A/"/>
+    
+    
+      <category term="B4A" scheme="https://baxiprince.github.io/tags/B4A/"/>
+    
+      <category term="VPN" scheme="https://baxiprince.github.io/tags/VPN/"/>
+    
+  </entry>
+  
+  <entry>
     <title>B4A打开文件夹</title>
     <link href="https://baxiprince.github.io/2020/03/12/B4A_open_fd/"/>
     <id>https://baxiprince.github.io/2020/03/12/B4A_open_fd/</id>
