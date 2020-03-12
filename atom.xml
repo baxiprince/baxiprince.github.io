@@ -17,35 +17,9 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>VBA_连接oracle数据库</title>
-    <link href="https://baxiprince.github.io/2020/03/11/VBA%E8%BF%9E%E6%8E%A5oracel%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
-    <id>https://baxiprince.github.io/2020/03/11/VBA%E8%BF%9E%E6%8E%A5oracel%E6%95%B0%E6%8D%AE%E5%BA%93/</id>
-    <published>2020-03-11T14:03:03.000Z</published>
-    <updated>2020-03-11T14:03:03.000Z</updated>
-    
-    <content type="html"><![CDATA[<figure class="highlight vb"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">Public</span> CNN  <span class="keyword">As</span> ADODB.Connection</span><br><span class="line"><span class="keyword">Sub</span> 连接数据库()</span><br><span class="line">    <span class="keyword">Dim</span> DataSource <span class="keyword">As</span> <span class="built_in">String</span></span><br><span class="line">    DataSource = Chr(<span class="number">34</span>) &amp; <span class="string">"(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=111.111.111.111)(PORT=1521)))(CONNECT_DATA=(SERVICE_NAME=ser_name)))"</span> &amp; Chr(<span class="number">34</span>)</span><br><span class="line">    <span class="keyword">If</span> CNN <span class="keyword">Is</span> <span class="literal">Nothing</span> <span class="keyword">Then</span></span><br><span class="line">       <span class="keyword">Set</span> CNN = <span class="keyword">New</span> ADODB.Connection</span><br><span class="line">       <span class="keyword">With</span> CNN</span><br><span class="line">           .ConnectionString = <span class="string">"Provider=MSDAORA.1; user id=userid; password=Password; data source = "</span> &amp; DataSource &amp; <span class="string">"; Persist Security Info=True"</span></span><br><span class="line">           .Open</span><br><span class="line">       <span class="keyword">End</span> <span class="keyword">With</span></span><br><span class="line">    <span class="keyword">Else</span></span><br><span class="line">       <span class="keyword">If</span> CNN.State &lt;&gt; <span class="number">1</span> <span class="keyword">Then</span></span><br><span class="line">            CNN.Open</span><br><span class="line">       <span class="keyword">End</span> <span class="keyword">If</span></span><br><span class="line">   <span class="keyword">End</span> <span class="keyword">If</span></span><br><span class="line"><span class="keyword">End</span> <span class="keyword">Sub</span></span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;figure class=&quot;highlight vb&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;l
-      
-    
-    </summary>
-    
-    
-      <category term="VB" scheme="https://baxiprince.github.io/categories/VB/"/>
-    
-    
-      <category term="VBA" scheme="https://baxiprince.github.io/tags/VBA/"/>
-    
-  </entry>
-  
-  <entry>
     <title>VBA_MD5算法</title>
-    <link href="https://baxiprince.github.io/2020/03/11/VBA_MD5%E7%AE%97%E6%B3%95/"/>
-    <id>https://baxiprince.github.io/2020/03/11/VBA_MD5%E7%AE%97%E6%B3%95/</id>
+    <link href="https://baxiprince.github.io/2020/03/11/VBA_MD5/"/>
+    <id>https://baxiprince.github.io/2020/03/11/VBA_MD5/</id>
     <published>2020-03-11T14:03:03.000Z</published>
     <updated>2020-03-11T14:03:03.000Z</updated>
     
@@ -69,9 +43,35 @@
   </entry>
   
   <entry>
+    <title>VBA_连接oracle数据库</title>
+    <link href="https://baxiprince.github.io/2020/03/11/VBA_con_oracel/"/>
+    <id>https://baxiprince.github.io/2020/03/11/VBA_con_oracel/</id>
+    <published>2020-03-11T14:03:03.000Z</published>
+    <updated>2020-03-11T14:03:03.000Z</updated>
+    
+    <content type="html"><![CDATA[<figure class="highlight vb"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">Public</span> CNN  <span class="keyword">As</span> ADODB.Connection</span><br><span class="line"><span class="keyword">Sub</span> 连接数据库()</span><br><span class="line">    <span class="keyword">Dim</span> DataSource <span class="keyword">As</span> <span class="built_in">String</span></span><br><span class="line">    DataSource = Chr(<span class="number">34</span>) &amp; <span class="string">"(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=111.111.111.111)(PORT=1521)))(CONNECT_DATA=(SERVICE_NAME=ser_name)))"</span> &amp; Chr(<span class="number">34</span>)</span><br><span class="line">    <span class="keyword">If</span> CNN <span class="keyword">Is</span> <span class="literal">Nothing</span> <span class="keyword">Then</span></span><br><span class="line">       <span class="keyword">Set</span> CNN = <span class="keyword">New</span> ADODB.Connection</span><br><span class="line">       <span class="keyword">With</span> CNN</span><br><span class="line">           .ConnectionString = <span class="string">"Provider=MSDAORA.1; user id=userid; password=Password; data source = "</span> &amp; DataSource &amp; <span class="string">"; Persist Security Info=True"</span></span><br><span class="line">           .Open</span><br><span class="line">       <span class="keyword">End</span> <span class="keyword">With</span></span><br><span class="line">    <span class="keyword">Else</span></span><br><span class="line">       <span class="keyword">If</span> CNN.State &lt;&gt; <span class="number">1</span> <span class="keyword">Then</span></span><br><span class="line">            CNN.Open</span><br><span class="line">       <span class="keyword">End</span> <span class="keyword">If</span></span><br><span class="line">   <span class="keyword">End</span> <span class="keyword">If</span></span><br><span class="line"><span class="keyword">End</span> <span class="keyword">Sub</span></span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;figure class=&quot;highlight vb&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;l
+      
+    
+    </summary>
+    
+    
+      <category term="VB" scheme="https://baxiprince.github.io/categories/VB/"/>
+    
+    
+      <category term="VBA" scheme="https://baxiprince.github.io/tags/VBA/"/>
+    
+  </entry>
+  
+  <entry>
     <title>VBA_破解密码保护内容的excel表格</title>
-    <link href="https://baxiprince.github.io/2020/03/11/vba_%E6%B8%85%E7%90%86%E5%AF%86%E7%A0%81%E4%BF%9D%E6%8A%A4/"/>
-    <id>https://baxiprince.github.io/2020/03/11/vba_%E6%B8%85%E7%90%86%E5%AF%86%E7%A0%81%E4%BF%9D%E6%8A%A4/</id>
+    <link href="https://baxiprince.github.io/2020/03/11/vba_clear_password/"/>
+    <id>https://baxiprince.github.io/2020/03/11/vba_clear_password/</id>
     <published>2020-03-11T14:03:03.000Z</published>
     <updated>2020-03-11T14:03:03.000Z</updated>
     
