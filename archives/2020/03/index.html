@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no,email=no,adress=no">
+  <!-- Color theme for statusbar -->
+  <meta name="theme-color" content="#000000" />
+  <!-- 强制页面在当前窗口以独立页面显示,防止别人在框架里调用页面 -->
+  <meta http-equiv="window-target" content="_top" />
+  
+  
+  <title>归档: 2020/3 | 编程记</title>
+  <meta name="description" content="记录每次的编程代码">
+<meta property="og:type" content="website">
+<meta property="og:title" content="编程记">
+<meta property="og:url" content="https://vbee.club/archives/2020/03/index.html">
+<meta property="og:site_name" content="编程记">
+<meta property="og:description" content="记录每次的编程代码">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:author" content="区区小生">
+<meta property="article:tag" content="VB">
+<meta property="article:tag" content="VBA">
+<meta property="article:tag" content="VB.NET">
+<meta property="article:tag" content="PHP">
+<meta property="article:tag" content="python">
+<meta property="article:tag" content="B4A">
+<meta name="twitter:card" content="summary">
+  <!-- Canonical links -->
+  <link rel="canonical" href="https://vbee.club/archives/2020/03/index.html">
+  
+    <link rel="alternate" href="/atom.xml" title="编程记" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png" type="image/x-icon">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  
+  
+    <link href="//cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.3.5/dist/jquery.fancybox.min.css" rel="stylesheet">
+  
+  
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1.4.0/dist/gitalk.min.css">
+  
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+
+<body class="main-center theme-black" itemscope itemtype="http://schema.org/WebPage">
+  <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+  <div class="slimContent">
+    <div class="navbar-header">
+      
+      
+      <div class="profile-block text-center">
+        <a id="avatar" href="https://vbee.club/" target="_blank">
+          <img class="img-circle img-rotate" src="/images/avatar.jpg" width="200" height="200">
+        </a>
+        <h2 id="name" class="hidden-xs hidden-sm">区区小生</h2>
+        <h3 id="title" class="hidden-xs hidden-sm hidden-md">记录编程的每一份代码</h3>
+        <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i> 江门, 中国</small>
+      </div>
+      
+      <div class="search" id="search-form-wrap">
+
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="搜索" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i class="icon icon-search"></i></button>
+            </span>
+        </div>
+    </form>
+    <div class="ins-search">
+  <div class="ins-search-mask"></div>
+  <div class="ins-search-container">
+    <div class="ins-input-wrapper">
+      <input type="text" class="ins-search-input" placeholder="想要查找什么..." x-webkit-speech />
+      <button type="button" class="close ins-close ins-selectable" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+    </div>
+    <div class="ins-section-wrapper">
+      <div class="ins-section-container"></div>
+    </div>
+  </div>
+</div>
+
+
+</div>
+      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+      <ul class="nav navbar-nav main-nav menu-highlight">
+        
+        
+        <li class="menu-item menu-item-home">
+          <a href="/.">
+            
+            <i class="icon icon-home-fill"></i>
+            
+            <span class="menu-title">首页</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives">
+            
+            <i class="icon icon-archives-fill"></i>
+            
+            <span class="menu-title">归档</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories">
+            
+            <i class="icon icon-folder"></i>
+            
+            <span class="menu-title">分类</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags">
+            
+            <i class="icon icon-tags"></i>
+            
+            <span class="menu-title">标签</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-links">
+          <a href="/links">
+            
+            <i class="icon icon-friendship"></i>
+            
+            <span class="menu-title">友链</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about">
+            
+            <i class="icon icon-cup-fill"></i>
+            
+            <span class="menu-title">关于</span>
+          </a>
+        </li>
+        
+      </ul>
+      
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://weibo.com/u/1794375991" target="_blank" title="Weibo" data-toggle=tooltip data-placement=top><i class="icon icon-weibo"></i></a></li>
+        
+    </ul>
+
+    </nav>
+  </div>
+</header>
+
+  
+    <aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    
+      <div class="widget">
+    <h3 class="widget-title">公告</h3>
+    <div class="widget-body">
+        <div id="board">
+            <div class="content">
+                <p>欢迎交流与分享经验!</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget-body">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/B4A/">B4A</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/CMD/">CMD</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/VB/">VB</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/">php</a><span class="category-list-count">28</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/">python</a><span class="category-list-count">5</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget-body">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/B4A/" rel="tag">B4A</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CMD/" rel="tag">CMD</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MD5/" rel="tag">MD5</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/UA/" rel="tag">UA</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VBA/" rel="tag">VBA</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VPN/" rel="tag">VPN</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/base64/" rel="tag">base64</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/curl/" rel="tag">curl</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/date/" rel="tag">date</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/download/" rel="tag">download</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/excel/" rel="tag">excel</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/fastapi/" rel="tag">fastapi</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/iamge/" rel="tag">iamge</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/image/" rel="tag">image</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/json/" rel="tag">json</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/map/" rel="tag">map</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mysql/" rel="tag">mysql</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/network/" rel="tag">network</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/php/" rel="tag">php</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/" rel="tag">python</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sha256/" rel="tag">sha256</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/url/" rel="tag">url</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/utf8/" rel="tag">utf8</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/video/" rel="tag">video</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/wifi/" rel="tag">wifi</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%8A%BD%E5%A5%96/" rel="tag">抽奖</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%84%9A%E6%9C%AC/" rel="tag">脚本</a><span class="tag-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget-body tagcloud">
+      <a href="/tags/B4A/" style="font-size: 14px;">B4A</a> <a href="/tags/CMD/" style="font-size: 13px;">CMD</a> <a href="/tags/MD5/" style="font-size: 13px;">MD5</a> <a href="/tags/UA/" style="font-size: 13px;">UA</a> <a href="/tags/VBA/" style="font-size: 13.5px;">VBA</a> <a href="/tags/VPN/" style="font-size: 13px;">VPN</a> <a href="/tags/base64/" style="font-size: 13px;">base64</a> <a href="/tags/curl/" style="font-size: 13px;">curl</a> <a href="/tags/date/" style="font-size: 14px;">date</a> <a href="/tags/download/" style="font-size: 13.5px;">download</a> <a href="/tags/excel/" style="font-size: 13px;">excel</a> <a href="/tags/fastapi/" style="font-size: 13px;">fastapi</a> <a href="/tags/iamge/" style="font-size: 13px;">iamge</a> <a href="/tags/image/" style="font-size: 14px;">image</a> <a href="/tags/json/" style="font-size: 13px;">json</a> <a href="/tags/map/" style="font-size: 13px;">map</a> <a href="/tags/mysql/" style="font-size: 13px;">mysql</a> <a href="/tags/network/" style="font-size: 13.5px;">network</a> <a href="/tags/php/" style="font-size: 13px;">php</a> <a href="/tags/python/" style="font-size: 13.5px;">python</a> <a href="/tags/sha256/" style="font-size: 13px;">sha256</a> <a href="/tags/url/" style="font-size: 13px;">url</a> <a href="/tags/utf8/" style="font-size: 13px;">utf8</a> <a href="/tags/video/" style="font-size: 13px;">video</a> <a href="/tags/wifi/" style="font-size: 13px;">wifi</a> <a href="/tags/%E6%8A%BD%E5%A5%96/" style="font-size: 13px;">抽奖</a> <a href="/tags/%E8%84%9A%E6%9C%AC/" style="font-size: 13px;">脚本</a>
+    </div>
+  </div>
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget-body">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">三月 2020</a><span class="archive-list-count">41</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget-body">
+      <ul class="recent-post-list list-unstyled no-thumbnail">
+        
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/B4A/">B4A</a>
+              </p>
+              <p class="item-title">
+                <a href="/2020/03/12/B4A_CHEAK_TF_VPN/" class="title">B4A 检测是否使用 VPN</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2020-03-12T02:26:03.000Z" itemprop="datePublished">2020-03-12</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/B4A/">B4A</a>
+              </p>
+              <p class="item-title">
+                <a href="/2020/03/12/B4A_close_ygms/" class="title">B4A 关闭严格模式</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2020-03-12T02:26:03.000Z" itemprop="datePublished">2020-03-12</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/B4A/">B4A</a>
+              </p>
+              <p class="item-title">
+                <a href="/2020/03/12/B4A_clp_use_eg/" class="title">B4A 粘贴板使用方法</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2020-03-12T02:26:03.000Z" itemprop="datePublished">2020-03-12</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/CMD/">CMD</a>
+              </p>
+              <p class="item-title">
+                <a href="/2020/03/12/CMD_GET_WIFI_PASS/" class="title">CMD 获取本地wifi密码</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2020-03-12T02:26:03.000Z" itemprop="datePublished">2020-03-12</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/php/">php</a>
+              </p>
+              <p class="item-title">
+                <a href="/2020/03/12/php_base64toamages/" class="title">php base64转图片</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2020-03-12T02:26:03.000Z" itemprop="datePublished">2020-03-12</time>
+              </p>
+            </div>
+          </li>
+          
+      </ul>
+    </div>
+  </div>
+  
+
+    
+  </div>
+</aside>
+
+  
+  
+<main class="main" role="main">
+  	<article class="content article article-archives article-type-list" itemscope="">
+	    <header class="article-header">
+	      <h1 itemprop="title">归档: 2020/3</h1>
+	      <p class="text-muted">共 10 篇文章</p>
+	    </header>
+	    <div class="article-body">
+	      
+  
+  
+    
+    
+      
+      
+      <section class="panel panel-default b-no">
+        <div class="panel-heading" role="tab">
+          <h3 class="panel-title">
+            <a data-toggle="collapse" href="#collapse2020" aria-expanded="true">
+              <i class="icon icon-calendar-plus text-active"></i><i class="icon icon-calendar-minus text"></i>
+              2020
+            </a>
+            <!-- <a href="/archives/2020" class="archive-year">2020</a> -->
+          </h3>
+        </div>
+        <div id="collapse2020" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading2020">
+        <div class="panel-body">
+          <div class="collection">
+    
+    
+<a href="/2020/03/12/B4A_CHEAK_TF_VPN/" class="collection-item" target="_blank" itemprop="url">
+  <time datetime="2020-03-12T02:26:03.000Z" itemprop="datePublished">2020-03-12</time>
+  <span>&nbsp;&nbsp;&nbsp;</span> B4A 检测是否使用 VPN
+</a>
+
+
+  
+    
+    
+    
+<a href="/2020/03/12/B4A_close_ygms/" class="collection-item" target="_blank" itemprop="url">
+  <time datetime="2020-03-12T02:26:03.000Z" itemprop="datePublished">2020-03-12</time>
+  <span>&nbsp;&nbsp;&nbsp;</span> B4A 关闭严格模式
+</a>
+
+
+  
+    
+    
+    
+<a href="/2020/03/12/B4A_clp_use_eg/" class="collection-item" target="_blank" itemprop="url">
+  <time datetime="2020-03-12T02:26:03.000Z" itemprop="datePublished">2020-03-12</time>
+  <span>&nbsp;&nbsp;&nbsp;</span> B4A 粘贴板使用方法
+</a>
+
+
+  
+    
+    
+    
+<a href="/2020/03/12/CMD_GET_WIFI_PASS/" class="collection-item" target="_blank" itemprop="url">
+  <time datetime="2020-03-12T02:26:03.000Z" itemprop="datePublished">2020-03-12</time>
+  <span>&nbsp;&nbsp;&nbsp;</span> CMD 获取本地wifi密码
+</a>
+
+
+  
+    
+    
+    
+<a href="/2020/03/12/php_base64toamages/" class="collection-item" target="_blank" itemprop="url">
+  <time datetime="2020-03-12T02:26:03.000Z" itemprop="datePublished">2020-03-12</time>
+  <span>&nbsp;&nbsp;&nbsp;</span> php base64转图片
+</a>
+
+
+  
+    
+    
+    
+<a href="/2020/03/12/php_curl_fd_download/" class="collection-item" target="_blank" itemprop="url">
+  <time datetime="2020-03-12T02:26:03.000Z" itemprop="datePublished">2020-03-12</time>
+  <span>&nbsp;&nbsp;&nbsp;</span> php url分片下载大文件
+</a>
+
+
+  
+    
+    
+    
+<a href="/2020/03/12/php_clear_utf8_bom/" class="collection-item" target="_blank" itemprop="url">
+  <time datetime="2020-03-12T02:26:03.000Z" itemprop="datePublished">2020-03-12</time>
+  <span>&nbsp;&nbsp;&nbsp;</span> php utf8去除Bom头
+</a>
+
+
+  
+    
+    
+    
+<a href="/2020/03/12/php_cut_image/" class="collection-item" target="_blank" itemprop="url">
+  <time datetime="2020-03-12T02:26:03.000Z" itemprop="datePublished">2020-03-12</time>
+  <span>&nbsp;&nbsp;&nbsp;</span> php 裁剪图片
+</a>
+
+
+  
+    
+    
+    
+<a href="/2020/03/12/php_download_image/" class="collection-item" target="_blank" itemprop="url">
+  <time datetime="2020-03-12T02:26:03.000Z" itemprop="datePublished">2020-03-12</time>
+  <span>&nbsp;&nbsp;&nbsp;</span> php 下载远程图片到本地
+</a>
+
+
+  
+    
+    
+    
+<a href="/2020/03/12/php_download_file/" class="collection-item" target="_blank" itemprop="url">
+  <time datetime="2020-03-12T02:26:03.000Z" itemprop="datePublished">2020-03-12</time>
+  <span>&nbsp;&nbsp;&nbsp;</span> php 文件下载
+</a>
+
+
+  
+  
+    </div></div></div></section>
+  
+
+	    </div>
+  	</article>
+  	
+    
+    <nav class="bar bar-footer clearfix" data-stick-bottom>
+        <div class="bar-inner">
+        <ul class="pager pull-left">
+            
+            <li class="prev disabled">
+                <a href="javascript:;">
+                    <i class="icon icon-angle-left"></i>
+                    上一页
+                </a>
+            </li>
+            
+            
+            <li class="next">
+                <a href="/archives/2020/03/page/2/">
+                    下一页
+                    <i class="icon icon-angle-right"></i>
+                </a>
+            </li>
+            
+        </ul>
+        <div class="total-article bar-right">Page 1 of 5</div>
+        </div>
+    </nav>
+    
+ 	
+</main>
+
+  <footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+	
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://weibo.com/u/1794375991" target="_blank" title="Weibo" data-toggle=tooltip data-placement=top><i class="icon icon-weibo"></i></a></li>
+        
+    </ul>
+
+    <div class="copyright">
+    	
+        &copy; 2020 区区小生
+        
+       
+        <div class="publishby">
+        	 <!--Theme by <a href="https://github.com/cofess" target="_blank"> cofess </a>base on <a href="https://github.com/cofess/hexo-theme-pure" target="_blank">pure</a>.-->
+        </div>
+    </div>
+</footer>
+  <script src="//cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+<script>
+window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+</script>
+
+<script src="/js/plugin.min.js"></script>
+
+
+<script src="/js/application.js"></script>
+
+
+    <script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/js/insight.js"></script>
+
+
+
+
+
+
+
+
+  <script src="//cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.3.5/dist/jquery.fancybox.min.js"></script>
+  <script>
+  //利用 FancyBox 实现点击图片放大
+  $(document).ready(function() {
+    $('article img').not('[hidden]').not('.panel-body img').each(function() {
+      var $image = $(this);
+      var imageCaption = $image.attr('alt');
+      var $imageWrapLink = $image.parent('a');
+      if ($imageWrapLink.length < 1) {
+        var src = this.getAttribute('src');
+        var idx = src.lastIndexOf('?');
+        if (idx != -1) {
+          src = src.substring(0, idx);
+        }
+        $imageWrapLink = $image.wrap('<a href="' + src + '"></a>').parent('a');
+      }
+      $imageWrapLink.attr('data-fancybox', 'images');
+      if (imageCaption) {
+        $imageWrapLink.attr('data-caption', imageCaption);
+      }
+    });
+    $().fancybox({
+      selector: '[data-fancybox="images"]',
+      hash: false,
+      loop: false,
+    });
+  });
+  </script>
+
+
+
+
+
+</body>
+<script type="text/javascript" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+</html>
